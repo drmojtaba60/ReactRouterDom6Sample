@@ -1,0 +1,12 @@
+.layout3 .content
+{
+    width:100vw;
+    height: 100vh;
+    background-color: #f27e7e;
+    color: #068a9f;
+    font-size: 1.8rem;
+}
+h1
+{
+    font-size: 1em;
+}
