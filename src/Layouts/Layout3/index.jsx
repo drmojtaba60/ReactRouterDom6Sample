@@ -1,12 +1,16 @@
 import { Link, Outlet } from 'react-router-dom';
 import './layout.css'; 
+import SideBar from '../sidebar';
 
 const Layout3=(props)=>
 {
-    return <div className='layout3'>
+    return <>
+    <SideBar/>
+    <div>
+        
+        <h1 className="text-3xl font-bold underline text-blue-700">Layout Index 2</h1>
         <div className='content'>
-
-        <h1>Layout Index 2</h1>
+       
         <ul style={{display:'flex',flexDirection:'row',gap:'3rem',listStyle:'none'}}>
             <li>
                 <Link to='/'>Home</Link>
@@ -25,6 +29,7 @@ const Layout3=(props)=>
             <Outlet />
         </div>
         </div>
-    </div>;
+    </div>
+    </>;
 }
 export default Layout3;
