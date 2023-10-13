@@ -6,7 +6,14 @@ const Layout3=(props)=>
 {
     return <>
     <SideBar/>
-    <div>
+    <Outlet/>
+    </>;
+}
+export default Layout3;
+
+
+
+{/* <div>
         
         <h1 className="text-3xl font-bold underline text-blue-700">Layout Index 2</h1>
         <div className='content'>
@@ -29,7 +36,4 @@ const Layout3=(props)=>
             <Outlet />
         </div>
         </div>
-    </div>
-    </>;
-}
-export default Layout3;
+    </div> */}

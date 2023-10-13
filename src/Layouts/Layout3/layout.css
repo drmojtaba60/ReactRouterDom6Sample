@@ -10,3 +10,13 @@ h1
 {
     font-size: 1em;
 }
+.sidebar
+{
+    position:absolute;
+    width: 295px;
+    background:#000;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    padding: 30px 20px;
+}
