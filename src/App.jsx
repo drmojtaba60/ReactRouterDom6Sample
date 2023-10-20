@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './App.css'
 import {BrowserRouter,Route,Routes, Outlet} from 'react-router-dom';
 const Layout =React.lazy(()=>import('./Layouts/Layout'));

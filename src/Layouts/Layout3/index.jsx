@@ -5,9 +5,9 @@ import SideBar from '../sidebar';
 const Layout3=(props)=>
 {
     return <>
-    <SideBar/>
-    <Outlet/>
-    </>;
+            <SideBar/>
+            <Outlet/>
+          </>;
 }
 export default Layout3;
 
