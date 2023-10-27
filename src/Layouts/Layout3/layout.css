@@ -91,4 +91,53 @@ h1
     background-color: #333;
     border-radius: 1px;
 }
-
+.sidebar .main-menu
+{
+    margin: 5px 0;
+}
+.sidebar .main-menu .menu-item
+{
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    display: block;
+}
+.sidebar .main-menu .menu-item .menu-icon
+{
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+.sidebar .main-menu .menu-item span
+{
+  position: absolute;
+  display:inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: opacity .33s ease-in;
+}
+.sidebar.inactive .main-menu .menu-item span
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.sidebar .main-menu .sub-menu
+{
+    margin-left: 20px;
+    border-left: 1px solid #fff;
+    padding-left:20px;
+    box-sizing: border-box;
+    color:#333;
+}
+.sidebar .main-menu .sub-menu a
+{
+    color: #333;
+    font-size: 15px;
+    display: block;
+    margin: 5px 0;
+}
