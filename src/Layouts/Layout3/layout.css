@@ -111,7 +111,7 @@ h1
     line-height: 40px;
     text-align: center;
 }
-.sidebar .main-menu .menu-item span
+.sidebar .main-menu .menu-item span 
 {
   position: absolute;
   display:inline-block;
@@ -119,13 +119,20 @@ h1
   opacity: 1;
   transition: opacity .33s ease-in;
 }
-.sidebar.inactive .main-menu .menu-item span
+
+.sidebar.inactive .main-menu .menu-item span,.sidebar.inactive .main-menu .sub-menu span
 {
     opacity: 0;
     width: 0;
     height: 0;
     overflow: hidden;
 }
+.sidebar .main-menu .sub-menu span
+{
+  opacity: 1;
+  transition: opacity .33s ease-in;
+}
+
 .sidebar .main-menu .sub-menu
 {
     margin-left: 20px;
@@ -140,4 +147,31 @@ h1
     font-size: 15px;
     display: block;
     margin: 5px 0;
+}
+.sidebar-menu-footer{
+    width: 100%;
+    height: 100px;
+    background: #333;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding:20px;
+    display: flex;
+    gap:10px;
+}
+.sidebar-menu-footer .avatar
+{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sidebar-menu-footer .avatar img{
+    min-width: 100%;
+}
+.sidebar-menu-footer .user-info
+{
+    color: #fff;
+    
 }

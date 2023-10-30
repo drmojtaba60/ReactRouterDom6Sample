@@ -1,8 +1,9 @@
 import logo from '@/assets/img/logos/csis.png';
 import { useState } from 'react';
+import user from '@/assets/img/user.jpg';
 const SideBar =(props)=>
 {
-  const [inactive,setInterval]=useState(false);
+  const [inactive,setInactive]=useState(false);
 
   return <div className={`sidebar ${inactive ? "inactive" : ""}`}>
           <div className="top-section">
@@ -10,7 +11,7 @@ const SideBar =(props)=>
                 <img src={logo} />
               </div>
               <div className='toggle-menu-btn' 
-                onClick={()=>setInterval(!inactive)} >
+                onClick={()=>setInactive(!inactive)} >
                   {
                    inactive 
                         ? <i className="bi bi-arrow-left-square-fill"></i>
@@ -48,19 +49,38 @@ const SideBar =(props)=>
                   </a>
                   <ul className="sub-menu">
                     <li >
-                      <a href="">Course</a>
+                      <a href="">
+                       <span>Course</span> 
+                        </a>
                     </li>
                     <li >
-                      <a href="">Videos</a>
+                      <a href="">
+                      <span>Videos</span> 
+                      </a>
                     </li>
                   </ul>
+                </li>
+                
+                <li>
+                  <a href="" className="menu-item">
+                    <div className="menu-icon">
+                      <i className="bi bi-vector-pen"></i>
+                    </div>
+                    <span>Product List</span>
+                  </a>
                 </li>
 
               </ul>      
           </div>
 
-          <div>
-
+          <div className="sidebar-menu-footer">
+              <div className="avatar">
+                <img src={user} alt="user" />
+              </div>
+              <div className="user-info">
+                <h5>Mojtaba Shaghi</h5>
+                <p>mojtaba.shagi@gmail.com</p>
+              </div>
           </div>
          </div>;
 }
