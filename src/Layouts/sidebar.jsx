@@ -1,10 +1,26 @@
+import { useEffect, useState } from 'react';
 import logo from '@/assets/img/logos/csis.png';
-import { useState } from 'react';
-import user from '@/assets/img/user.jpg';
+import user from '@/assets/img/user0.jpg';
+import {MenuItem} from '@/Components/MenuSidebar/MenuItem'
 const SideBar =(props)=>
 {
+  const menuItems=[
+    {name:'Dashboard',to:'/',icon:<i className="bi bi-speedometer2"></i>},
+    {name:'About',icon:<i className="bi bi-newspaper"></i>,
+    children:[
+      {name:'Team',to:'/about/team',icon:<i className="bi bi-search"></i>},
+      {name:'Mission',to:'/about/mission',icon:<i className="bi bi-search"></i>}
+    ]
+    },
+    {name:'ProductList',to:'/products',icon:<i className="bi bi-vector-pen"></i>},
+  
+];
   const [inactive,setInactive]=useState(false);
-
+  useEffect(()=>
+    {
+      props.changeInActive(inactive);
+    }
+  ,[inactive]);
   return <div className={`sidebar ${inactive ? "inactive" : ""}`}>
           <div className="top-section">
               <div className="logo">
@@ -31,45 +47,13 @@ const SideBar =(props)=>
 
           <div className="main-menu">
               <ul>
-                <li>
-                  <a href="" className="menu-item">
-                    <div className="menu-icon">
-                      <i className="bi bi-speedometer2"></i>
-                    </div>
-                    <span>Dashboard</span>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="" className="menu-item">
-                    <div className="menu-icon">
-                      <i className="bi bi-newspaper"></i>
-                    </div>
-                    <span>Contents</span>
-                  </a>
-                  <ul className="sub-menu">
-                    <li >
-                      <a href="">
-                       <span>Course</span> 
-                        </a>
-                    </li>
-                    <li >
-                      <a href="">
-                      <span>Videos</span> 
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                
-                <li>
-                  <a href="" className="menu-item">
-                    <div className="menu-icon">
-                      <i className="bi bi-vector-pen"></i>
-                    </div>
-                    <span>Product List</span>
-                  </a>
-                </li>
-
+                  {
+                    menuItems.map((item,posIndex)=><MenuItem 
+                                                    item={item} 
+                                                    key={posIndex}
+                                                    eventActive={()=>{if(inactive) setInactive(false);}} 
+                                                    />)
+                  }
               </ul>      
           </div>
 

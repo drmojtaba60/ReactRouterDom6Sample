@@ -10,6 +10,14 @@ h1
 {
     font-size: 1em;
 }
+.container
+{
+    margin-left:300px;
+    transition:margin-left .3s ease-in;
+}
+.container.inactive{
+    margin-left: 80px;
+}
 .sidebar
 {
     position:fixed;
@@ -91,6 +99,7 @@ h1
     background-color: #333;
     border-radius: 1px;
 }
+.sidebar a {cursor: pointer;}
 .sidebar .main-menu
 {
     margin: 5px 0;
@@ -127,6 +136,10 @@ h1
     height: 0;
     overflow: hidden;
 }
+
+.sidebar .main-menu .sub-menu.active{
+    max-height:250px
+}
 .sidebar .main-menu .sub-menu span
 {
   opacity: 1;
@@ -140,6 +153,9 @@ h1
     padding-left:20px;
     box-sizing: border-box;
     color:#333;
+    max-height: 0;
+    overflow: hidden;
+    transition:max-height .25s ease-in;
 }
 .sidebar .main-menu .sub-menu a
 {
@@ -147,6 +163,7 @@ h1
     font-size: 15px;
     display: block;
     margin: 5px 0;
+    cursor: pointer;
 }
 .sidebar-menu-footer{
     width: 100%;
@@ -181,5 +198,19 @@ h1
     opacity: 0;
     width: 0;
     height: 0;
+<<<<<<< HEAD
     overflow: hidden;
 }
+=======
+}
+.sidebar.inactive .sidebar-menu-footer .avatar
+{
+    max-height:32px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.sidebar.inactive .sidebar-menu-footer .avatar img
+{
+    height:36px;
+}
+>>>>>>> ff3dfa16fbb828424b15d971614c1321271b2841

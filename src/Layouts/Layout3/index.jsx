@@ -1,12 +1,17 @@
 import { Link, Outlet } from 'react-router-dom';
 import './layout.css'; 
 import SideBar from '../sidebar';
+import { useState } from 'react';
 
 const Layout3=(props)=>
 {
+    const [inactive,setInactive]=useState(false);
     return <>
-            <SideBar/>
+            <SideBar changeInActive={val=>setInactive(val)}/>
+            <div className={`container ${inactive&&"inactive"}`  }>
             <Outlet/>
+
+            </div>
           </>;
 }
 export default Layout3;
